@@ -208,6 +208,7 @@ message AtomicRenameEntryRequest {
     string old_name = 2;
     string new_directory = 3;
     string new_name = 4;
+    repeated int32 signatures = 5;
 }
 
 message AtomicRenameEntryResponse {
@@ -292,6 +293,7 @@ message GetFilerConfigurationResponse {
     int32 signature = 8;
     string metrics_address = 9;
     int32 metrics_interval_sec = 10;
+    string version = 11;
 }
 
 message SubscribeMetadataRequest {
@@ -361,6 +363,7 @@ message FilerConf {
         string disk_type = 5;
         bool fsync = 6;
         uint32 volume_growth_count = 7;
+        bool read_only = 8;
     }
     repeated PathConf locations = 2;
 }
